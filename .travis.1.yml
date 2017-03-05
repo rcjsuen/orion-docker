@@ -1,0 +1,45 @@
+branches:
+  only:
+    - master
+
+git:
+  depth: 1
+
+language:
+  - generic
+
+sudo: required
+
+services:
+  - docker
+
+# before_install:
+#   - sleep 1;
+
+# install:
+#   - sleep 1;
+
+# before_script:
+#   - sleep 1;
+
+script:
+  # - docker build -f Dockerfile .
+  - docker build .
+  # - docker build -f Dockerfile.3.1 .
+  # - docker build -f Dockerfile.4.1 .
+  # - docker build -f Dockerfile.5.1 .
+# before_install:
+#   - docker build -t rcjsuen/eclipse-orion .
+
+# install:
+#   - docker run --name orion -d -p 0.0.0.0:8081:8081 rcjsuen/eclipse-orion
+
+# before_script:
+#   - sleep 20;
+#   - docker ps -a
+#   - docker logs orion
+#   - curl http://localhost:8081/gitapi/branch/file
+#   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+
+# script:
+#   - docker push rcjsuen/eclipse-orion
