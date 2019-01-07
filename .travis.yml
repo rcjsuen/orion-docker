@@ -17,9 +17,10 @@ services:
 script:
   - git clone https://github.com/rcjsuen/dockerfile-language-server-nodejs
   - cd dockerfile-language-server-nodejs
-  - git checkout v0.0.19
+  - git checkout v0.0.20
   - npm install
   - npm run build
-  - docker build -t rcjsuen/docker-langserver:0.0.19 . || travis_terminate 1;
+  - docker build -t rcjsuen/docker-langserver:0.0.20 . || travis_terminate 1;
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" || travis_terminate 1;
-  - docker push rcjsuen/docker-langserver:0.0.19 || travis_terminate 1;
+  - docker push rcjsuen/docker-langserver:0.0.20 || travis_terminate 1;
+  
